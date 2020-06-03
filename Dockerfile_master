@@ -1,0 +1,5 @@
+FROM moxoff/spark-base:latest
+
+EXPOSE 8080 7077 6066
+
+CMD "/opt/spark/spark/bin/spark-class" org.apache.spark.deploy.master.Master
