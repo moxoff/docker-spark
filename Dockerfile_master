@@ -2,4 +2,4 @@ FROM moxoff/spark-base:latest
 
 EXPOSE 8080 7077 6066
 
-CMD "/opt/spark/${SPARK_DOWNLOAD_VERSION}/bin/spark-class" org.apache.spark.deploy.master.Master
+CMD "/opt/spark/${SPARK_UNTAR_FOLDER}/bin/spark-class" org.apache.spark.deploy.master.Master
