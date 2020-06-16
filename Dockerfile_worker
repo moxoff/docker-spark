@@ -1,0 +1,9 @@
+FROM moxoff/spark-base:latest
+
+EXPOSE 8081 4040
+
+# number of cores and memory are used within the script, they are passed when launching the container
+COPY entrypoint_worker.sh ./
+RUN chmod +x entrypoint_worker.sh
+
+CMD ./entrypoint_worker.sh

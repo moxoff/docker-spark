@@ -1,0 +1,3 @@
+printf "spark.worker.cleanup.enabled\t true\nspark.worker.cleanup.interval\t 43200\nspark.worker.cleanup.appDataTtl\t 1209600\n" >> /opt/spark/${SPARK_UNTAR_FOLDER}/conf/spark-defaults.conf
+printf "SPARK_WORKER_CORES=${SPARK_WORKER_CORES}\nSPARK_WORKER_MEMORY=${SPARK_WORKER_MEMORY}\n" >> /opt/spark/${SPARK_UNTAR_FOLDER}/conf/spark-env.sh
+"/opt/spark/${SPARK_UNTAR_FOLDER}/bin/spark-class" org.apache.spark.deploy.worker.Worker ${SPARK_MASTER}
