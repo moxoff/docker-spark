@@ -1,0 +1,5 @@
+FROM moxoff/spark-base:latest
+
+COPY spark_submit.sh .
+
+CMD ["/bin/bash", "spark_submit.sh"]
