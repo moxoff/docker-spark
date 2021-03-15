@@ -12,6 +12,9 @@ WORKDIR /opt/spark
 
 RUN tar -xzf ${SPARK_DOWNLOAD_VERSION}.tgz --transform "s,${SPARK_DOWNLOAD_VERSION},${SPARK_UNTAR_FOLDER}," && rm ${SPARK_DOWNLOAD_VERSION}.tgz
 
+RUN wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk/1.7.4/aws-java-sdk-1.7.4.jar && mv aws-java-sdk-1.7.4.jar /opt/spark/${SPARK_UNTAR_FOLDER}/jars/
+RUN wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.7.2/hadoop-aws-2.7.2.jar && mv hadoop-aws-2.7.2.jar /opt/spark/${SPARK_UNTAR_FOLDER}/jars/
+
 EXPOSE 8080 7077 6066
 
 RUN echo "spark.master.rest.enabled          true" >> /opt/spark/${SPARK_UNTAR_FOLDER}/conf/spark-defaults.conf
