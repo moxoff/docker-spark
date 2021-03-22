@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:8u252-jdk
 
 ENV SPARK_VERSION=2.4.5
 ENV SPARK_DOWNLOAD_VERSION="spark-${SPARK_VERSION}-bin-hadoop2.7"

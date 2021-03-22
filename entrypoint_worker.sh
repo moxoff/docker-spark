@@ -3,7 +3,7 @@ SPARK_DEFAULT_CLEANUP="spark.worker.cleanup.enabled\t true\nspark.worker.cleanup
 SPARK_DEFAULT_LOG="spark.local.dir\t /spark-local-dir\nspark.eventLog.dir\t /data/spark-events\nspark.history.fs.logDirectory\t /data/spark-events\nspark.eventLog.enabled\t true\n"
 SPARK_DEFAULT_REST_PORT="spark.master.rest.enabled\t true\n"
 
-SPARK_DEFAULT=${SPARK_DEFAULT_CLEANUP}+${SPARK_DEFAULT_LOG}+${SPARK_DEFAULT_REST_PORT}
+SPARK_DEFAULT=${SPARK_DEFAULT_CLEANUP}${SPARK_DEFAULT_LOG}${SPARK_DEFAULT_REST_PORT}
 printf "${SPARK_DEFAULT}" > /opt/spark/${SPARK_UNTAR_FOLDER}/conf/spark-defaults.conf
 
 # Define the parameters in the file spark-env.conf
